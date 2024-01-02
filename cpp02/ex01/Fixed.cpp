@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Fixed.cpp                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: parisasadeqi <parisasadeqi@student.coda      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/21 13:35:50 by parisasadeq   #+#    #+#                 */
-/*   Updated: 2023/12/27 12:07:49 by parisasadeq   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/21 13:35:50 by parisasadeq       #+#    #+#             */
+/*   Updated: 2024/01/02 13:00:17 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ Fixed::Fixed () : _fixedPoint(0) {
 }
 
 Fixed::Fixed (const int num) : _fixedPoint(num << _fractionalBits) {
-		std::cout << "Int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float num ) : _fixedPointValue( std::roundf( num * ( 1 << _fractionalBits ) ) ) {
+Fixed::Fixed( const float num ) : _fixedPoint( std::roundf( num * ( 1 << _fractionalBits ) ) ) {
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -41,7 +41,25 @@ Fixed::~Fixed () {
 	std::cout << "Deconstructor called" << std::endl;
 };
 
+float	Fixed::toFloat( void ) const {
+	return static_cast<float> (this->_fixedPoint) / (1 << this->_fractionalBits);
+}
+
+int		Fixed::toInt( void ) const {
+	return (this->_fixedPoint >> _fractionalBits);
+}
+
 int	Fixed::getRawBits( void ) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPoint);
+}
+
+void	Fixed::setRawBits( int const raw ) {
+	this->_fixedPoint = raw;
+}
+
+std::ostream& operator<<(std::ostream& out, Fixed const &copy) {
+	out << copy.toFloat();
+	return out;
+	
 }

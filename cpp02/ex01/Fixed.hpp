@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: parisasadeqi <parisasadeqi@student.coda      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/21 13:23:16 by parisasadeq   #+#    #+#                 */
-/*   Updated: 2023/12/27 12:08:12 by parisasadeq   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/21 13:23:16 by parisasadeq       #+#    #+#             */
+/*   Updated: 2024/01/02 12:32:57 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@ class	Fixed {
 		Fixed(const int nbr);
 		Fixed( const float num );
 		Fixed (const Fixed& copy);
-		Fixed& operator = (const Fixed& copy);
+		Fixed& operator=(const Fixed& copy);
 		~Fixed();
 
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 };
+
+std::ostream& operator<<(std::ostream& out, Fixed const &copy);
 
 #endif
