@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 11:46:20 by parisasadeq       #+#    #+#             */
-/*   Updated: 2024/01/03 15:56:28 by psadeghi         ###   ########.fr       */
+/*   Created: 2024/01/03 16:14:43 by psadeghi          #+#    #+#             */
+/*   Updated: 2024/01/03 16:27:02 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef POINT_HPP
+#define POINT_HPP
 
 #include "Fixed.hpp"
 #include <iostream>
 
-int	main( void ) {
-	Fixed	a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+class Point
+{
+private:
+	/* data */
+	Fixed const	x;
+	Fixed const	y;
+public:
+	Point();
+	Point(const float firstFloat, const float secondFloat);
+	Point(Point& copy);
+	~Point();
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	Point& operator=(const Point& var);
+};
 
-	return 0;
-}
+#endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Fixed.cpp                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: parisasadeqi <parisasadeqi@student.coda      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/21 13:35:50 by parisasadeq   #+#    #+#                 */
-/*   Updated: 2023/12/22 13:20:25 by parisasadeq   ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/21 13:35:50 by parisasadeq       #+#    #+#             */
+/*   Updated: 2024/01/02 12:14:33 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,8 @@ Fixed::~Fixed () {
 int	Fixed::getRawBits( void ) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPoint);
+}
+
+void	Fixed::setRawBits( int const raw ) {
+	this->_fixedPoint = raw;
 }
