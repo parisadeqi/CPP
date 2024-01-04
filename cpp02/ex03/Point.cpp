@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:16:25 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/04 14:59:59 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:14:39 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Point::Point(const float firstFloat, const float secondFloat): _x(firstFloat), _
 	
 }
 
-
+// Is this the copy constructor??
 Point::Point(const Point& copy): _x(copy._x), _y(copy._y) {
 
 }

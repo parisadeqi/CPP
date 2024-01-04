@@ -6,13 +6,13 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:09:02 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/04 14:58:11 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:06:02 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static Fixed sign (Point a, Point b, Point c) {
+Fixed sign (Point a, Point b, Point c) {
 	return (a.getX() - c.getX()) * (b.getY() - c.getY()) - (b.getX() - c.getX()) * (a.getY() - c.getY());
 }
 

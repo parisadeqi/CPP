@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 11:46:20 by parisasadeq       #+#    #+#             */
-/*   Updated: 2024/01/04 16:06:29 by psadeghi         ###   ########.fr       */
+/*   Created: 2024/01/04 16:48:05 by psadeghi          #+#    #+#             */
+/*   Updated: 2024/01/04 16:59:06 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iostream>
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-int main ( void ) {
-	if ( bsp( Point(0, 0), Point(10, 30), Point(20, 0), Point(30, 15) ) == true ) {
-		std::cout << "Point is in the triangle" << std::endl;
-	} else {
-		std::cout << "Point is not in the triangle" << std::endl;
-	}
-	return 0;
-}
+#include <iostream>
+#include <string>
+
+class ClapTrap {
+private :
+	std::string _name;
+	int	_hitPoints;
+	int	_energyPoints;
+	int	_attackDamage;
+
+public :
+	ClapTrap();
+	ClapTrap(const ClapTrap& copy);
+	ClapTrap(std::string name);
+	~ClapTrap();
+
+	void attack( const std::string& target );
+	void takeDamage( unsigned int amount );
+	void beRepaired( unsigned int amount );
+};
+
+
+
+#endif
