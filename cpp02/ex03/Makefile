@@ -6,7 +6,7 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/20 15:42:39 by parisasadeq       #+#    #+#              #
-#    Updated: 2024/01/03 16:14:27 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/01/04 14:59:45 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Fixed
 NAME = fixed
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
-SRC = main.cpp Fixed.cpp Pointed.cpp bsp.cpp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 

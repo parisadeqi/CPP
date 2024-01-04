@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:14:43 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/03 16:27:02 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:59:05 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,19 @@
 class Point
 {
 private:
-	/* data */
-	Fixed const	x;
-	Fixed const	y;
+	Fixed const	_x;
+	Fixed const	_y;
 public:
 	Point();
 	Point(const float firstFloat, const float secondFloat);
-	Point(Point& copy);
+	Point(const Point& copy);
 	~Point();
-
 	Point& operator=(const Point& var);
+	Fixed getX( void ) const;
+	Fixed getY( void ) const;
+	//static Fixed sign (Point a, Point b, Point c);
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
