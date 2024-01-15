@@ -6,7 +6,7 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/20 15:42:39 by parisasadeq       #+#    #+#              #
-#    Updated: 2024/01/15 13:08:12 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/01/15 13:08:28 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Battle
 NAME = battle
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 

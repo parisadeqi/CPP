@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:48:05 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/15 12:54:48 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:47:53 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 
 class ClapTrap {
-private :
+protected :
 	std::string _name;
 	int	_hitPoints;
 	int	_energyPoints;
