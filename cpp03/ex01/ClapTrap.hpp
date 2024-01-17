@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:48:05 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/15 14:47:53 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:00:27 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ public :
 	void attack( const std::string& target );
 	void takeDamage( unsigned int amount );
 	void beRepaired( unsigned int amount );
-	int  getHitPoints( void );
-	int getEnergyPoints( void );
-	int getAttackDamage( void );
 };
 
 

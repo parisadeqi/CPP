@@ -6,15 +6,14 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:47:59 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/15 12:44:42 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:03:19 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
+#include "ScavTrap.hpp"
 
 int main (void) {
-	ClapTrap first("Parisa");
+	ScavTrap first("Parisa");
 
 	first.attack("Ehsan");
 

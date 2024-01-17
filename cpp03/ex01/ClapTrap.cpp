@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:47:39 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/15 13:05:22 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:00:22 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,4 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		this->_hitPoints += amount;
 		this->_energyPoints -= 1;
 	}
-}
-
-int		ClapTrap::getHitPoints (void ) {
-	return _hitPoints;
-}
-
-int		ClapTrap::getEnergyPoints ( void ) {
-	return _energyPoints;
-}
-
-int		ClapTrap::getAttackDamage (void ) {
-	return _attackDamage;
 }
