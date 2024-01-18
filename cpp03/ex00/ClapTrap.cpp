@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:47:39 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/15 13:05:22 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:12:12 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap &var ) {
 }
 
 ClapTrap::~ClapTrap () {
-	std::cout << "Deconstructor got called." << std::endl;
+	std::cout << "Destructor got called." << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target) {

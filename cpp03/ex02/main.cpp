@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 13:11:24 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:30:41 by psadeghi         ###   ########.fr       */
+/*   Created: 2024/01/04 16:47:59 by psadeghi          #+#    #+#             */
+/*   Updated: 2024/01/18 13:27:26 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "FragTrap.hpp"
 
-#include "ClapTrap.hpp"
+int main (void) {
+	FragTrap first("Parisa");
 
-class ScavTrap : public ClapTrap {
-private :
+	first.attack("Ehsan");
+	first.highFiveGuys();
 
-public :
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap( const ScavTrap& copy);
-	~ScavTrap();
-
-	ScavTrap& operator=( const ScavTrap &var);
-	void attack( const std::string& target );
-	void takeDamage( unsigned int amount );
-	void beRepaired( unsigned int amount );
-	void gaurdGate();
-};
-
-#endif
+	return (0);
+}
