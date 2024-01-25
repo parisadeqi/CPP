@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:39:25 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/23 14:40:21 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:24:45 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	const Animal* i = new Cat();
 	std::cout << "j type = " << j->getType() << std::endl;
 	std::cout << "i type = " << i->getType() << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
 
@@ -46,5 +46,13 @@ int main()
 	delete wrong;
 	delete wrongCat;
 
+	std::cout << "\n          Animal With Brain          \n" << std::endl;
+
+	const Animal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
+	for (int i = 0; i < 4; i++)
+	{
+		delete animals[i];
+	}
+	
 	return 0;
 }
