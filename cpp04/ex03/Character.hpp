@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:42:30 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/30 13:49:03 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:08:48 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Character : public ICharacter {
 	private:
 		std::string _name;
+		AMateria* _inventory[4];
 
 	public:
 		Character();
