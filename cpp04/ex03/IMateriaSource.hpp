@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:36:36 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/29 17:31:27 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:31:56 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AMateria.hpp"
 
-class IMateriaSource : public AMateria
+class IMateriaSource
 {
 	public:
 		virtual ~IMateriaSource() {}

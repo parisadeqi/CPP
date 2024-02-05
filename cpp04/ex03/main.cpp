@@ -6,12 +6,12 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:40:58 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/29 17:28:34 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:38:56 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "IMateriaSource.hpp"
-#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 #include "AMateria.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"

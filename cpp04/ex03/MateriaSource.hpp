@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:40:45 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/02 13:10:05 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:32:51 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MateriaSource : public IMateriaSource {
 		MateriaSource& operator=(const MateriaSource& var);
 		~MateriaSource();
 
-		void	learnMateria(AMateria*);
+		void	learnMateria(AMateria* m);
 		AMateria* createMateria(std::string const& type);
 };
 

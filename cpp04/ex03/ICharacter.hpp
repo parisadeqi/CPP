@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:30:53 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/25 13:35:48 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:39:33 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ICHARACTER_HPP
 
 #include <iostream>
+
 #include "AMateria.hpp"
 
 class ICharacter

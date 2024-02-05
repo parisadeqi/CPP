@@ -6,19 +6,19 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:01:01 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/02 12:54:30 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:38:30 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() {
-	for (int i = 0; i < 4; i++)
-	{
-		_inventory[i] = NULL;
-	}
-	std::cout << "Original constructor got called.!" << std::endl;
-}
+// Character::Character() {
+// 	for (int i = 0; i < 4; i++)
+// 	{
+// 		_inventory[i] = NULL;
+// 	}
+// 	std::cout << "Original constructor got called.!" << std::endl;
+// }
 
 Character::Character(std::string name) : _name(name) {
 	for (int i = 0; i < 4; i++)
@@ -28,7 +28,7 @@ Character::Character(std::string name) : _name(name) {
 	std::cout << _name << "got created." << std::endl;
 }
 
-Character::Character(const Character& var)
+Character::Character(const Character& var) : _name(var._name)
 {
 	*this = var;
 	std::cout << "Copy constructor got called." << std::endl;

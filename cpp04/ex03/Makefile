@@ -6,7 +6,7 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 13:22:14 by psadeghi          #+#    #+#              #
-#    Updated: 2024/01/25 13:23:28 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/02/05 13:37:03 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Game
 NAME = game
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++11
-SRC = main.cpp
+SRC = main.cpp AMateria.cpp Character.cpp MateriaSource.cpp Ice.cpp Cure.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 
