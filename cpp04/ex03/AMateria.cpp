@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 12:56:09 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/05 13:04:50 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:18:30 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ AMateria::AMateria( std::string const& type ) : _type(type) {
 }
 
 AMateria::~AMateria() {
-	std::cout << this->_type << "got destructed." << std::endl;
+	std::cout << this->_type << " got destructed." << std::endl;
 }
 
 AMateria::AMateria (AMateria const& copy) {

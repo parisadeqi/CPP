@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:50:40 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/24 16:12:12 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/07 10:29:24 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Dog&	Dog::operator=( const Dog& var ) {
 	{
 		this->_type = var._type;
 		this->brain = new Brain(*var.brain);
+		std::cout << "operator overloader got called\n" << std::endl;
 	}
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:13:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/26 17:27:59 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/27 14:26:13 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Bureacurat {
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return ("The grade is can not be higher than 1!");
+					return ("The grade can not be higher than 1!");
 				}
 		};
 		class GradeTooLowException : public std::exception {

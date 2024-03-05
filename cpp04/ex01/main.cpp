@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:39:25 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/24 11:24:45 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:11:25 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int main()
 {
-
 	std::cout << "\n          Animal          \n" << std::endl;
 
 	const Animal* meta = new Animal();
@@ -46,8 +45,12 @@ int main()
 	delete wrong;
 	delete wrongCat;
 
+
 	std::cout << "\n          Animal With Brain          \n" << std::endl;
 
+	Dog	hapoo;
+	Dog wagho = hapoo;
+	
 	const Animal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
 	for (int i = 0; i < 4; i++)
 	{

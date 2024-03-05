@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:34:14 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/01/23 14:10:47 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:06:18 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	virtual ~Animal();
 
 	std::string	getType() const;
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 };
 
 

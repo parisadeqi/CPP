@@ -6,26 +6,18 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:01:01 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/05 13:38:30 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:20:20 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
-// Character::Character() {
-// 	for (int i = 0; i < 4; i++)
-// 	{
-// 		_inventory[i] = NULL;
-// 	}
-// 	std::cout << "Original constructor got called.!" << std::endl;
-// }
 
 Character::Character(std::string name) : _name(name) {
 	for (int i = 0; i < 4; i++)
 	{
 		_inventory[i] = NULL;
 	}
-	std::cout << _name << "got created." << std::endl;
+	std::cout << _name << " got created." << std::endl;
 }
 
 Character::Character(const Character& var) : _name(var._name)
@@ -35,7 +27,7 @@ Character::Character(const Character& var) : _name(var._name)
 }
 
 Character::~Character() {
-	std::cout << "Character " << this->_name << " destroyed" << std::endl;
+	std::cout << "Character " << this->_name << " got destroyed" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i])
@@ -62,7 +54,7 @@ void Character::equip(AMateria* m) {
 		if (this->_inventory[i] == NULL)
 		{
 			this->_inventory[i] = m;
-			std::cout << m->getType() << "got equiped." << std::endl;
+			std::cout << m->getType() << " got equiped." << std::endl;
 			return;
 		}
 	}
@@ -81,5 +73,10 @@ void Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	//std::cout << this->_name << "is using inventory on " << target->getName() <<
+	if (this->_inventory[idx]) {
+		this->_inventory[idx]->use(target);
+		std::cout << this->_name << " use " << this->_inventory[idx]->getType() << std::endl;
+	}
+	else
+		std::cout << this->_name << "can not use an inventory." << std::endl;
 }

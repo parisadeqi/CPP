@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:30:53 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/05 13:39:33 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/02/06 10:43:22 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 #include "AMateria.hpp"
 
+class AMateria;
+
 class ICharacter
 {
-	private:
-
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const& getName() const = 0;
