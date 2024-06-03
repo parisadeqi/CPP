@@ -6,7 +6,7 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:11:49 by psadeghi          #+#    #+#              #
-#    Updated: 2024/02/27 14:21:31 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/06/03 17:48:13 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Bureaucrat
 NAME = bureaucrat
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++11
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,11 +16,11 @@
 # include <iostream>
 # include <string>
 # include <exception>
-# include "Bureacurat.hpp"
+# include "Bureaucrat.hpp"
 
-class Bureacurat;
+class Bureaucrat;
 
-class Form {
+class AForm {
 	private:
 		const std::string _name;
 		bool _signedForm;
@@ -28,17 +28,17 @@ class Form {
 		const int _gradeToExecute;
 
 	public:
-		Form(std::string name, int gradeToSign);
-		~Form();
-		Form(const Form& copy);
-		Form& operator=(const Form& var);
+		AForm(std::string name, int gradeToSign, int gradeToExecute);
+		~AForm();
+		AForm(const AForm& copy);
+		AForm& operator=(const AForm& var);
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		bool getSignedForm() const;
 		std::string getName() const;
 
-		virtual void beSigned(const Bureacurat& var) = 0;
-
+		virtual void beSigned(const Bureaucrat& var);
+		virtual void execute(Bureaucrat const & executor) const = 0;
 		class GradeTooHighException : public std::exception {
 			public :
 				virtual const char* what() const throw() {
@@ -51,8 +51,14 @@ class Form {
 					return ("The grade is too low!");
 				}
 		};
+		class UnsignedFormException : public std::exception {
+			public :
+				virtual const char* what() const throw() {
+					return ("The form is not signed!");
+				}
+		};
 };
 
-std::ostream& operator<<(std::ostream& o, const Form& var);
+std::ostream& operator<<(std::ostream& o, const AForm& var);
 
 #endif

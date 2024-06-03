@@ -6,20 +6,22 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:23:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/27 14:30:24 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:44:53 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureacurat.hpp"
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main (void) {
 	try
 	{
-		Bureacurat b("Bureaucrat", 11);
-		Form form("FORM", 10);
+		Bureaucrat b("Bureaucrat", 11);
+		ShrubberyCreationForm shrubby("Shrubb");
 		
-		b.signForm(form);
-		std::cout << form << std::endl;
+		shrubby.beSigned(b);
+		std::cout << shrubby << std::endl;
 	}
 	catch (std::exception & e)
 	{
