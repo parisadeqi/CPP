@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/25 15:11:49 by psadeghi          #+#    #+#              #
-#    Updated: 2024/06/05 11:31:30 by psadeghi         ###   ########.fr        #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: psadeghi <psadeghi@student.42.fr>            +#+                      #
+#                                                    +#+                       #
+#    Created: 2024/01/25 15:11:49 by psadeghi      #+#    #+#                  #
+#    Updated: 2024/06/10 13:48:00 by parisasadeq   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Converter
 NAME = converter
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++11
-SRC = main.cpp #ScalarConverter.cpp
+SRC = main.cpp ScalarConverter.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 
