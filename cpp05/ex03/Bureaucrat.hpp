@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureacurat.hpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:13:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/27 14:26:10 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:21:53 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@
 # include <iostream>
 # include <exception>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
-class Bureacurat {
+class Bureaucrat {
 	private:
 		const std::string _name;
 		int _grade;
 	public:
-		Bureacurat(std::string name, int grade);
-		~Bureacurat();
-		Bureacurat(const Bureacurat& copy);
-		Bureacurat& operator=(const Bureacurat& var);
+		Bureaucrat(std::string name, int grade);
+		~Bureaucrat();
+		Bureaucrat(const Bureaucrat& copy);
+		Bureaucrat& operator=(const Bureaucrat& var);
 		std::string getName() const;
 		int getGrade() const;
 		void increamentGrade();
 		void decrementGrade();
-		void signForm(Form& var);
+		void signForm(AForm& var);
+		void executeForm(AForm const & AForm);
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
@@ -48,6 +49,6 @@ class Bureacurat {
 		};
 };
 
-std::ostream& operator<<(std::ostream& o, const Bureacurat& var);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& var);
 
 #endif

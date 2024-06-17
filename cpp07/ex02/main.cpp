@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:57:30 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/12 14:16:45 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:44:24 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int main(int, char**)
 	{
 		numbers[i] = rand();
 	}
-	delete [] mirror;//
+	delete [] mirror;
 	return 0;
 }

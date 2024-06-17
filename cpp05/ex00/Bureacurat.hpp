@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:13:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/27 14:26:13 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:47:32 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 # include <exception>
 # include <string>
 
-class Bureacurat {
+class Bureaucrat {
 	private:
 		const std::string _name;
 		int _grade;
 	public:
-		Bureacurat(std::string name, int grade);
-		~Bureacurat();
-		Bureacurat(const Bureacurat& copy);
-		Bureacurat& operator=(const Bureacurat& var);
+		Bureaucrat(std::string name, int grade);
+		~Bureaucrat();
+		Bureaucrat(const Bureaucrat& copy);
+		Bureaucrat& operator=(const Bureaucrat& var);
 		std::string getName() const;
 		int getGrade() const;
 		void increamentGrade();
@@ -44,6 +44,6 @@ class Bureacurat {
 		};
 };
 
-std::ostream& operator<<(std::ostream& o, const Bureacurat& var);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& var);
 
 #endif

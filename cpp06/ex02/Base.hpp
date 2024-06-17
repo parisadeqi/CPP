@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 17:23:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/03 12:09:43 by psadeghi         ###   ########.fr       */
+/*   Created: 2024/06/11 11:52:18 by psadeghi          #+#    #+#             */
+/*   Updated: 2024/06/11 12:03:51 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int main (void) {
-	try
-	{
-		Bureaucrat b("Bureaucrat", 11);
-		Form form("FORM", 10, 6);
-		
-		b.signForm(form);
-		std::cout << form << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-	return (0);
-}
+class Base {
+	public:
+		virtual ~Base() {}
+};
+
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
+
+#endif

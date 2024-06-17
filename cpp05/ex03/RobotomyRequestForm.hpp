@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 15:13:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/04 12:34:08 by psadeghi         ###   ########.fr       */
+/*   Created: 2024/06/04 11:57:05 by psadeghi          #+#    #+#             */
+/*   Updated: 2024/06/04 12:33:57 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <exception>
@@ -22,18 +22,25 @@
 class AForm;
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm {
+class RobotomyRequestForm : public AForm {
 	private:
 		std::string _target;
 	public:
-		ShrubberyCreationForm(std::string target);
-		~ShrubberyCreationForm();
-		ShrubberyCreationForm(ShrubberyCreationForm const & copy);
-		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & copy);
+		RobotomyRequestForm(std::string target);
+		~RobotomyRequestForm();
+		RobotomyRequestForm(RobotomyRequestForm const & copy);
+		RobotomyRequestForm & operator=(RobotomyRequestForm const & copy);
 		
 		std::string	getTarget( void ) const;
 		
 		void execute(Bureaucrat const & executor) const;
+
+		class RobotomyFailiurException : public std::exception {
+			public :
+				virtual const char* what() const throw() {
+					return ("Robotomy failed!");
+				}
+		};
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& var);

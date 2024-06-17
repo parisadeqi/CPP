@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 15:13:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/04 12:34:08 by psadeghi         ###   ########.fr       */
+/*   Created: 2024/06/04 11:57:05 by psadeghi          #+#    #+#             */
+/*   Updated: 2024/06/04 12:33:52 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <exception>
@@ -22,18 +22,19 @@
 class AForm;
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm {
+class PresidentialPardonForm : public AForm {
 	private:
 		std::string _target;
 	public:
-		ShrubberyCreationForm(std::string target);
-		~ShrubberyCreationForm();
-		ShrubberyCreationForm(ShrubberyCreationForm const & copy);
-		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & copy);
+		PresidentialPardonForm(std::string target);
+		~PresidentialPardonForm();
+		PresidentialPardonForm(PresidentialPardonForm const & copy);
+		PresidentialPardonForm & operator=(PresidentialPardonForm const & copy);
 		
 		std::string	getTarget( void ) const;
 		
 		void execute(Bureaucrat const & executor) const;
+
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& var);

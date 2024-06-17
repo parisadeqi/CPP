@@ -6,17 +6,15 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:11:49 by psadeghi          #+#    #+#              #
-#    Updated: 2024/06/04 12:17:07 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/06/11 12:12:43 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Bureaucrat
-NAME = bureaucrat
+PROJECT = Base
+NAME = base
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++11
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp\
-	RobotomyRequestForm.cpp PresidentialPardonForm.cpp
-
+SRC = main.cpp Base.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 

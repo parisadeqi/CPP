@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Bureacurat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:13:48 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/04 12:21:53 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:47:32 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <exception>
 # include <string>
-# include "AForm.hpp"
+# include "Form.hpp"
 
-class AForm;
+class Form;
 
 class Bureaucrat {
 	private:
@@ -33,8 +33,7 @@ class Bureaucrat {
 		int getGrade() const;
 		void increamentGrade();
 		void decrementGrade();
-		void signForm(AForm& var);
-		void executeForm(AForm const & AForm);
+		void signForm(Form& var);
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw() {

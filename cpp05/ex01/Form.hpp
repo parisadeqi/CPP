@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:18:12 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/02/27 14:23:30 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:16:44 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <string>
 # include <exception>
-# include "Bureacurat.hpp"
+# include "Bureaucrat.hpp"
 
-class Bureacurat;
+class Bureaucrat;
 
 class Form {
 	private:
@@ -28,15 +28,23 @@ class Form {
 		const int _gradeToExecute;
 
 	public:
-		Form(std::string name, int gradeToSign);
+		Form(std::string name, int gradeToSign, int gradeToExecute);
 		~Form();
 		Form(const Form& copy);
 		Form& operator=(const Form& var);
-		void beSigned(const Bureacurat& var);
+		void beSigned(const Bureaucrat& var);
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		bool getSignedForm() const;
 		std::string getName() const;
+
+		class Exception : public std::exception
+		{
+			public:
+				virtual const char* what() const throw() {
+					return ("Exception!");
+				}
+		};
 		class GradeTooHighException : public std::exception {
 			public :
 				virtual const char* what() const throw() {
