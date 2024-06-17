@@ -6,15 +6,15 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:11:49 by psadeghi          #+#    #+#              #
-#    Updated: 2024/06/17 12:37:16 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/06/17 14:05:56 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Easyfind
-NAME = easyfind
+PROJECT = Span
+NAME = span
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++11
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 
