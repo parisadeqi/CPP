@@ -6,14 +6,13 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:26:18 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/21 12:57:26 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/21 13:22:49 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange(const std::string& dataFileName) {
-	fillDataMap(dataFileName);
+BitcoinExchange::BitcoinExchange(void){
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& var) {
@@ -79,7 +78,8 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 	std::string line;
 
 	if (!file.is_open()) {
-		throw std::runtime_error("Error: could not open file.");
+		throw std::invalid_argument("could not open file.");
+		return;
 	}
 	try {
 		if (getline(file, line))
@@ -115,15 +115,15 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 
 
 				float value = std::stof(valueStr);
+				std::ostringstream dateStream;
+				dateStream << std::setfill('0') << std::setw(4) << year << "-"
+						<< std::setw(2) << month << "-"
+						<< std::setw(2) << day;
+				std::string formattedDate = dateStream.str();
 				try {
 					checkDate(year, month, day);
 					checkValue(value);
 					// Format date as YYYY-MM-DD string
-					std::ostringstream dateStream;
-					dateStream << std::setfill('0') << std::setw(4) << year << "-"
-							<< std::setw(2) << month << "-"
-							<< std::setw(2) << day;
-					std::string formattedDate = dateStream.str();
 					float price = findTheDate(formattedDate);
 					// Calculate result and print
 					float result = price * value;

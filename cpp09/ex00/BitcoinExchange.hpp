@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:56:35 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/21 12:57:24 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/21 13:20:05 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 class BitcoinExchange {
 	public:
-		BitcoinExchange(const std::string& dataFileName);
+		BitcoinExchange(void);
 		BitcoinExchange(const BitcoinExchange& var);
 		~BitcoinExchange();
 		BitcoinExchange& operator=(const BitcoinExchange& var);

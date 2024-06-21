@@ -1,0 +1,15 @@
+date | value
+2011-01-03 | 3
+2011-01-03 | 2
+2011-01-03 | 1
+2011-01-03 | 1.2
+2011-01-09 | 1
+2012-01-11 | -1  // Invalid value (negative)
+2001-02-29 | 5  // Invalid date (non-leap year)
+2012-02-29 | 5  // Valid date (leap year)
+2012-02-30 | 10 // Invalid date (no 30th in February)
+2012-04-31 | 8  // Invalid date (no 31st in April)
+2020-02-29 | 2  // Valid date (leap year)
+2021-02-29 | 7  // Invalid date (non-leap year)
+2012-01-11 | 2147483648  // Invalid value (too large)
+2012-01-11 | 1001        // Invalid value (too large)
