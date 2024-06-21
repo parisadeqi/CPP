@@ -6,7 +6,7 @@
 #    By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 15:11:49 by psadeghi          #+#    #+#              #
-#    Updated: 2024/06/18 14:15:06 by psadeghi         ###   ########.fr        #
+#    Updated: 2024/06/21 12:12:45 by psadeghi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Btc
 NAME = btc
 CC = clang++
 CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++11
-SRC = main.cpp
+SRC = main.cpp BitcoinExchange.cpp
 OBJ := $(SRC:%.cpp=%.o)
 RM := rm -rf
 

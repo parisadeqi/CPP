@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:26:18 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/19 14:27:53 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/21 12:57:26 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ BitcoinExchange::BitcoinExchange(const std::string& dataFileName) {
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& var) {
 	this->InputRecord.date = var.InputRecord.date;
 	this->InputRecord.value = var.InputRecord.value;
-	for (std::map<std::string, double>::const_iterator it = var._dataBase.begin(); it != var._dataBase.end(); ++it)
+	for (std::map<std::string, float>::const_iterator it = var._dataBase.begin(); it != var._dataBase.end(); ++it)
 	{
 		this->_dataBase[it->first] = it->second;
 	}
@@ -33,12 +33,12 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& var) {
 		this->InputRecord.date = var.InputRecord.date;
 		this->InputRecord.value = var.InputRecord.value;
 		this->_dataBase.clear();
-		for (std::map<std::string, double>::const_iterator it = var._dataBase.begin(); it != var._dataBase.end(); ++it)
+		for (std::map<std::string, float>::const_iterator it = var._dataBase.begin(); it != var._dataBase.end(); ++it)
 		{
 			this->_dataBase[it->first] = it->second;
 		}
-		return *this;
 	}
+		return *this;
 }
 
 void BitcoinExchange::fillDataMap(const std::string& filename) {
@@ -62,7 +62,7 @@ void BitcoinExchange::fillDataMap(const std::string& filename) {
 		std::string dateStr, priceStr;
 		if (getline(ss, dateStr, ',') && getline(ss, priceStr)) {
 			try {
-				double price = std::stod(priceStr);
+				float price = std::stod(priceStr);
 				//std::cout << "parseDate(dateStr)" << dateStr << std::endl;
 				this->_dataBase[dateStr] = price;
 			} catch (const std::exception& e) {
@@ -81,7 +81,21 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 	if (!file.is_open()) {
 		throw std::runtime_error("Error: could not open file.");
 	}
-
+	try {
+		if (getline(file, line))
+		{
+			std::cout << "line = " << line << std::endl;
+			if (line == "date | value") {}
+			else {
+				throw std::invalid_argument("Error: unexpected file format.");
+			}
+		}
+		else
+			throw std::invalid_argument("File is empty.");
+	}
+	catch (std::invalid_argument& ia) {
+		std::cerr << "Error: " << ia.what() << std::endl;
+	}
 	while (getline(file, line)) {
 		std::istringstream ss(line);
 		std::string dateStr, valueStr;
@@ -100,40 +114,24 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 				}
 
 
-				double value = std::stod(valueStr);
+				float value = std::stof(valueStr);
 				try {
 					checkDate(year, month, day);
 					checkValue(value);
+					// Format date as YYYY-MM-DD string
+					std::ostringstream dateStream;
+					dateStream << std::setfill('0') << std::setw(4) << year << "-"
+							<< std::setw(2) << month << "-"
+							<< std::setw(2) << day;
+					std::string formattedDate = dateStream.str();
+					float price = findTheDate(formattedDate);
+					// Calculate result and print
+					float result = price * value;
+					std::cout << formattedDate << " => " << value << " = " << result << std::endl;
 				}
 				catch (std::invalid_argument& ia) {
-					std::cout << ia.what() << std::endl;
+					std::cerr << "Error: invalid argument =>" << ia.what() << std::endl;
 				}
-
-				// Format date as YYYY-MM-DD string
-				std::ostringstream dateStream;
-				dateStream << std::setfill('0') << std::setw(4) << year << "-"
-						   << std::setw(2) << month << "-"
-						   << std::setw(2) << day;
-				std::string formattedDate = dateStream.str();
-
-				// Retrieve Bitcoin price for the date
-				double price = 0;
-				auto it = _dataBase.find(formattedDate);
-				if (it != _dataBase.end()) {
-					price = it->second;
-				} else {
-					// Find closest lower date if exact match not found
-					auto lowerIt = _dataBase.lower_bound(formattedDate);
-					if (lowerIt != _dataBase.begin()) {
-						--lowerIt;
-						price = lowerIt->second;
-					}
-				}
-
-				// Calculate result and print
-				double result = price * value;
-				std::cout << formattedDate << " => " << value << " = " << result << std::endl;
-
 			} catch (const std::exception& e) {
 				std::cerr << "Error: bad input => " << line << " (" << e.what() << ")" << std::endl;
 			}
@@ -141,8 +139,25 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 			std::cerr << "Error: invalid format => " << line << std::endl;
 		}
 	}
-
 	file.close();
+}
+
+float	BitcoinExchange::findTheDate(std::string formattedDate) {
+
+	// Retrieve Bitcoin price for the date
+	float price = 0;
+	auto it = _dataBase.find(formattedDate);
+	if (it != _dataBase.end()) {
+		price = it->second;
+	} else {
+		// Find closest lower date if exact match not found
+		auto lowerIt = _dataBase.lower_bound(formattedDate);
+		if (lowerIt != _dataBase.begin()) {
+			--lowerIt;
+			price = lowerIt->second;
+		}
+	}
+	return price;
 }
 
 bool BitcoinExchange::isLeapYear(int year) {
@@ -168,16 +183,22 @@ void BitcoinExchange::checkDate(int year, int month, int day) {
 		if (day == 31)
 			throw std::invalid_argument("Invalid date values.");
 	if (month == 2)
-		if (isLeapYear(year) == true)
+	{
+		if (isLeapYear(year) == false)
+		{
 			if (day > 28)
 				throw std::invalid_argument("Invalid date values.");
 			else if (day > 29)
 				throw std::invalid_argument("Invalid date values.");
+		}
+	}
 	
 }
 
-void BitcoinExchange::checkValue(double value) {
-	if (value < 0 || value > 1000) {
-		throw std::invalid_argument("Value out of range.");
+void BitcoinExchange::checkValue(float value) {
+	if (value < 0) {
+		throw std::invalid_argument("Value not a positive number.");
 	}
+	if (value > 1000)
+		throw std::invalid_argument("Value too large a number.");
 }

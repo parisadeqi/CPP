@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:56:35 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/19 14:24:59 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/21 12:57:24 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,17 @@ class BitcoinExchange {
 
 		void	fillDataMap(const std::string& fileName);
 		void	processInputFile(const std::string& inputsFileName);
-		void	checkValue(double value);
+		float	findTheDate(std::string formattedDate);
+		void	checkValue(float value);
 		void	checkDate(int year, int month, int day);
 		bool	isLeapYear(int year);
 
 
 	private:
-		std::map<std::string, double>	_dataBase;
+		std::map<std::string, float>	_dataBase;
 		struct {
 			std::string date;
-			double value;
+			float value;
 		} InputRecord;
 };
 
