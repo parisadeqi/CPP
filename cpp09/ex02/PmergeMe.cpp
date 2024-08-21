@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 11:11:43 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/25 14:49:48 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/28 14:41:57 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ void PmergeMe::sortList() {
 	if (_listSeq.size() <= 1)
 		return;
 
-	// Step 2: Sort pairs
 	sortPairsList();
 	std::cout << "we are after this." << std::endl;
 	_listSeq = _listA;  // Initialize _listSeq with lstA

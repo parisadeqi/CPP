@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:26:18 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/21 13:22:49 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/28 14:36:57 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 	try {
 		if (getline(file, line))
 		{
-			std::cout << "line = " << line << std::endl;
+			std::cout << line << std::endl;
 			if (line == "date | value") {}
 			else {
 				throw std::invalid_argument("Error: unexpected file format.");

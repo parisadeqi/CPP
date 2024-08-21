@@ -6,7 +6,7 @@
 /*   By: psadeghi <psadeghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:04:53 by psadeghi          #+#    #+#             */
-/*   Updated: 2024/06/25 15:11:56 by psadeghi         ###   ########.fr       */
+/*   Updated: 2024/06/28 14:42:47 by psadeghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,14 @@ int	main(int argc, char** argv)
 	{
 		PmergeMe	pmergeme(argc, argv);
 
-		std::cout << "Before List:\t";
-		// pmergeme.printSequencesList();
-		std::cout << std::endl;
 
 		clock_t lstStart = clock();
 		pmergeme.sortList();
 		clock_t lstEnd = clock();
 		double listTime =
 			static_cast<double>(lstEnd - lstStart) / CLOCKS_PER_SEC * 1000;
-
-		std::cout << "After List:\t";
-		// pmergeme.printSequencesList();
-		std::cout << std::endl;
 	
-		std::cout << "Before Deque:\t";
+		std::cout << "Before\t";
 		pmergeme.printSequence();
 		std::cout << std::endl;
 		clock_t dequeStart = clock();
@@ -41,7 +34,7 @@ int	main(int argc, char** argv)
 		clock_t dequeEnd = clock();
 		double dequeTime =
 			static_cast<double>(dequeEnd - dequeStart) / CLOCKS_PER_SEC * 1000;
-		std::cout << "After Deque:\t";
+		std::cout << "After\t";
 		pmergeme.printSequence();
 		std::cout << std::endl;
 	
